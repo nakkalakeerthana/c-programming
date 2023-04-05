@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+   int arr[5] = {12, 56, 34, 78, 100};
+   int largest = arr[0]; // initialize largest element to the first element of the array
+
+   for (int i = 1; i < 5; i++) { // loop through the array starting from the second element
+      if (arr[i] > largest) {
+         largest = arr[i]; // update largest element if current element is larger
+      }
+   }
+
+   printf("The largest element of the array is: %d", largest);
+   return 0;
+}
