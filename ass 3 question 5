@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char string[100];
+    int i, j, max = 0, freq[256] = {0}, len;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]s", string);
+
+    len = strlen(string);
+
+    // Count the frequency of each character
+    for (i = 0; i < len; i++)
+        freq[string[i]]++;
+
+    // Find the character with the highest frequency
+    for (i = 0; i < len; i++)
+    {
+        if (max < freq[string[i]])
+        {
+            max = freq[string[i]];
+            j = i;
+        }
+    }
+
+    printf("Max repeated character in the string = %c\n", string[j]);
+    printf("It occurs %d times\n", max);
+
+    return 0;
+}
