@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int i, sum = 0;
+
+    printf("Enter the string : ");
+    scanf("%[^\n]%*c", str);  // read the string with spaces
+
+    for (i = 0; str[i] != '\0'; i++) {
+        sum += (int) str[i];   // add ASCII value of each character to the sum
+    }
+
+    printf("Sum of all characters : %d", sum);
+
+    return 0;
+}
