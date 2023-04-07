@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+// Declare the union variable data
+union myData {
+    int myInt;
+    float myFloat;
+};
+
+int main() {
+    union myData data;
+    int choice;
+
+    // Prompt the user to enter a value of their choice
+    printf("Enter 1 to input an integer, or 2 to input a float: ");
+    scanf("%d", &choice);
+
+    if(choice == 1) {
+        // If the user entered 1, prompt them to input an integer
+        printf("Enter an integer: ");
+        scanf("%d", &data.myInt);
+
+        // Print the integer value that was entered
+        printf("You entered the integer value: %d\n", data.myInt);
+    }
+    else if(choice == 2) {
+        // If the user entered 2, prompt them to input a float
+        printf("Enter a float: ");
+        scanf("%f", &data.myFloat);
+
+        // Print the float value that was entered
+        printf("You entered the float value: %f\n", data.myFloat);
+    }
+    else {
+        printf("Invalid choice. Please enter either 1 or 2.\n");
+    }
+
+    return 0;
+}
